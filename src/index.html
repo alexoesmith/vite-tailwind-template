@@ -12,7 +12,7 @@
 
   <div class="flex flex-col items-center justify-center mx-auto mt-20">
     <div id="logo"></div>
-    <h1 class="p-10 text-4xl text-bold">Vite, Tailwind & Alpine JS</h1>
+    <h1 class="p-10 text-4xl text-center text-bold">Vite, Tailwind & Alpine JS</h1>
   </div>
 
   <div x-data="{ count: 0 }" class="flex items-center justify-center max-w-xl m-auto space-x-10">
@@ -23,7 +23,7 @@
 
   <div class="pt-10 text-center" x-data="comments()">
     <button class="inline-block p-2 text-white bg-green-600 rounded" @click="fetchComments()" :disabled="isLoading"
-      :class="isLoading ? 'opacity-20' : ''" x-text="comments.length ? 'Hide Comments': 'Load Comments'"></button>
+      :class="isLoading ? 'opacity-20' : ''" x-text="!comments.length ? 'Load Comments': 'Hide Comments'"></button>
     <template x-if="isLoading">
       <p class="pt-4">Please wait, loading comments...</p>
     </template>
